@@ -13,5 +13,8 @@ export default Model.extend({
   wantToPlay: DS.hasMany('game', {inverse:"willingPlayers"}, {async:true}),
   groups: DS.hasMany('group', {inverse:"members"}, {async:true}),
   host: DS.attr('boolean'),
-  notes: DS.attr()
+  notes: DS.attr(),
+  joined: DS.attr('date', {
+    defaultValue() {return new Date();}
+  })
 });
