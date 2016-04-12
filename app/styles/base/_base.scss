@@ -1,6 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+// @import url(https://fonts.googleapis.com/css?family=PT+Sans);
 
 *,
 *::before,
@@ -19,7 +20,8 @@ body::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans';
+  font-size: 10px;
 }
 
 a {
@@ -28,8 +30,4 @@ a {
 
 hr {
   border: 1px solid black;
-}
-
-h1 {
-  text-align: center;
 }
