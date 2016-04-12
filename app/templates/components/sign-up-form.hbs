@@ -1,1 +1,22 @@
-{{yield}}
+<div class="row">
+  <h2>New User Sign Up</h2>
+  <form class="col s12">
+    <div class="row">
+      {{md-input value=username label='Board Game Geek Username' class="col s6" validate=true}}
+      {{md-input value=password label='Password' class="col s6" validate=true type="password"}}
+    </div>
+    <div class="row">
+      {{md-input value=firstName label='First Name' class="col s4" validate=true}}
+      {{md-input value=lastName label='Last Name' class="col s8" validate=true}}
+    </div>
+    <div class="row">
+      {{md-input value=address label='Street Address' class="col s12" validate=true}}
+    </div>
+    <div class="row">
+      {{md-input value=email type="email" label="Email Address" validate=true class="col s4"}}
+      <div class="col s8">
+        <button type="submit" class="btn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>

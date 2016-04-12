@@ -2,6 +2,7 @@ import Model from 'ember-data/model';
 
 export default Model.extend({
   username: DS.attr(), //this must be identical to BGG username
+  password: DS.attr(),
   firstName: DS.attr(),
   lastName: DS.attr(),
   address: DS.attr(),
