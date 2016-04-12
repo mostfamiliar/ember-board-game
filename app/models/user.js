@@ -2,6 +2,7 @@ import Model from 'ember-data/model';
 
 export default Model.extend({
   username: DS.attr(), //this must be identical to BGG username
+  password: DS.attr(),
   firstName: DS.attr(),
   lastName: DS.attr(),
   address: DS.attr(),
@@ -12,5 +13,8 @@ export default Model.extend({
   wantToPlay: DS.hasMany('game', {inverse:"willingPlayers"}, {async:true}),
   groups: DS.hasMany('group', {inverse:"members"}, {async:true}),
   host: DS.attr('boolean'),
-  notes: DS.attr()
+  notes: DS.attr(),
+  joined: DS.attr('date', {
+    defaultValue() {return new Date();}
+  })
 });
