@@ -1,2 +1,9 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
+
+
+@import 'base/index';
+// @import 'base/utils'; goes near top, above components. Variables and mixins go at very top;
+
+@import 'layout/index';
+@import 'components/index';

@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+// @import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'PT Sans';
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: 1px solid black;
+}
