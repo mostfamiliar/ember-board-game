@@ -8,5 +8,5 @@ export default Model.extend({
   published: DS.attr(), // string not date object
   maxPlayers: DS.attr('number'), //number of players
   ownedBy: DS.hasMany('user', {inverse:"collection"}, {async:true}),
-
+  willingPlayers: DS.hasMany('user', {inverse:"wantToPlay"}, {async:true})
 });
