@@ -1,5 +1,3 @@
-<h3>Game List</h3>
-{{#each model.gameList.item as |game|}}
-{{game.name.content}}
-{{/each}}
-{{log model.gameList.item}}
+<ul>
+{{game-list-tile games=model.gameList.item}}
+</ul>
