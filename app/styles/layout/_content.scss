@@ -15,3 +15,37 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.about-box1 {
+  text-align: center;
+  color: #FAFAFA;;
+  background-color: #616161;
+  background-color: rgba(63, 60, 60, 1);
+  max-width: 65%;
+  display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 375px;
+  h4  {
+    margin-top: 30px;;
+  }
+}
+
+.about-box2 {
+  text-align: center;
+  color: #616161;
+  background-color: #FDD835;
+  height: 210px;
+  position: absolute;
+  top: 645px;
+  right: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px
+}
+
+.about-box2 h4 {
+  margin-top: 25px;
+}
