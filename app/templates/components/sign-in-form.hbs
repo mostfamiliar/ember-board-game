@@ -2,8 +2,11 @@
   <h2>Sign in</h2>
   <form class="col s12">
     <div class="row">
-      {{md-input value=username label='Board Game Geek Username' class="col s6" validate=true}}
-      {{md-input value=password label='Password' class="col s6" validate=true type="password"}}
+      {{md-input value=usernameLogin label='Board Game Geek Username' class="col s5" validate=true}}
+      {{md-input value=passwordLogin label='Password' class="col s5" validate=true type="password"}}
+      <div class="col s2">
+        <button type="submit" class="btn" {{action "signIn"}}>Sign In</button>
+      </div>
     </div>
   </form>
 </div>

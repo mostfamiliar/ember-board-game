@@ -9,15 +9,18 @@ export default Ember.Component.extend({
         firstName: this.get('firstName'),
         lastName: this.get('lastName'),
         address: this.get('address'),
-        email: this.get('email')
+        email: this.get('email'),
+        host: false,
+        lat: '90', //to change
+        lng: '90', //to change
+        notes: ''
       };
-      // this.set('username', '');
-      // this.set('password', '');
-      // this.set('firstName', '');
-      // this.set('lastName', '');
-      // this.set('address', '');
-      // this.set('email', '');
-      console.log(params);
+      this.set('username', '');
+      this.set('password', '');
+      this.set('firstName', '');
+      this.set('lastName', '');
+      this.set('address', '');
+      this.set('email', '');
       this.sendAction('newUser', params);
     }
   }
