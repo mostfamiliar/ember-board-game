@@ -21,3 +21,14 @@
     background-color: #FFA726;
   }
 }
+
+
+.signUpBtn {
+  background-color: rgba(139, 193, 117, .9);
+  color: #FAFAFA;
+  font-size: 20px;
+  margin-top: 12px;
+  &:hover {
+    background-color: #A5D6A7;
+  }
+}

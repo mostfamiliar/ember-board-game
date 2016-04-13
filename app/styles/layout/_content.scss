@@ -1,23 +1,4 @@
-.index-header {
-  background: url('http://cdn.skim.gs/images/classic-board-game-feature/how-classic-board-games-can-be-fun-and-educational');
-  background-size: cover;
-  background-position: 0%, 90%;
-  width: 100%;
-  height: 500px;
-  position: relative;
-}
-
-.header-text {
-  margin-top: 0;
-  text-align: center;
-  color: #FAFAFA;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .about-box1 {
-  text-align: center;
   color: #FAFAFA;;
   background-color: #616161;
   background-color: rgba(63, 60, 60, 1);
@@ -26,26 +7,43 @@
   padding-top: 30px;
   padding-bottom: 30px;
   height: 375px;
-  h4  {
-    margin-top: 30px;;
-  }
+}
+
+.about-text1 {
+  float: left;
+  margin-left: 50px;
+  margin-top: 50px;
 }
 
 .about-box2 {
-  text-align: center;
   color: #616161;
   background-color: #FDD835;
-  height: 210px;
+  height: 310px;
+  width: 910px;
   position: absolute;
-  top: 645px;
+  top: 655px;
   right: 0;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 50%;
   display: block;
   padding-left: 20px;
   padding-right: 20px
 }
 
-.about-box2 h4 {
-  margin-top: 25px;
+.about-text2 {
+  float: right;
+  margin-right: 40px;
+  margin-top: 100px;
+}
+
+.call-to-action {
+  text-align: center;
+  margin-top: 265px;
+  h5 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.sign-in-text {
+  padding-top: 10px;
 }

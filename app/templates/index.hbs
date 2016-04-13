@@ -1,22 +1,62 @@
 
-<div class="index-header">
-  <h2 class="header-text">A community of board game lovers,<br>
-    conquering territories and eating pretzels,<br>
-    one 2-3hr session at a time.
-  </h2>
-  <a class="waves-effect waves-light btn-large joinBtn">JOIN US</a>
-</div>
+<div class="overlay">
+  <div class="index-header">
+    <h2 class="header-text">A community of board game lovers,<br>
+      conquering territories and eating pretzels,<br>
+      one 2-3hr session at a time.
+    </h2>
+    <a class="waves-effect waves-light btn-large joinBtn">JOIN US</a>
+  </div>
   <div class="about-section">
     <div class="about-box1">
-      <h4>Track your game collection.</h4>
-      <h4>Browse the latest games.</h4>
-      <h4>See what your friends are playing.</h4>
+      <div class="about-text1">
+        <h4>Track your game collection.</h4>
+        <h4>Browse the latest games.</h4>
+        <h4>See what your friends are playing.</h4>
+      </div>
     </div>
     <div class="about-box2">
-      <h4>Connect with other game lovers.</h4>
-      <h4>Host a game night or join another's.</h4>
+      <div class="about-text2">
+        <h4>Connect with other game lovers or</h4>
+        <h4>host a game night.</h4>
+      </div>
+    </div>
+  </div>
+  <div class="call-to-action">
+    <h3>Ready to meet your fellow gamers?</h3>
+    <h5>Sign up with your Board Game Geek username and start connecting with other players.</h5>
+    <a class="waves-effect waves-light btn-large signUpBtn modal-trigger" href="#modal1">Sign Up</a>
+
+    <h6 class="sign-in-text">Already a member? Click <a href="modal2">here</a> to log in!</h6>
+  </div>
+
+  <!-- {{#if modalIsOpen}}
+      {{#md-modal close='closeModal' id="modal1"}}
+          <div class="modal-content">
+            {{sign-up-form newUser="newUser"}}
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="waves-effect waves-light btn signUpBtn" {{action "signUp"}}>Sign Up</button>
+              <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                  Cancel
+              </a>
+          </div>
+      {{/md-modal}}
+  {{/if}} -->
+
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+    <p>
+      hi. this is a modal
+    </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
   </div>
 
-{{sign-up-form newUser="newUser"}}
-{{sign-in-form signIn="signIn" allUsers=model}}
+
+
+
+  <!-- {{sign-in-form signIn="signIn" allUsers=model}} -->
+</div>
