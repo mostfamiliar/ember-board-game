@@ -1,5 +1,5 @@
 
-{{md-checks selection=addGame content=allGames optionLabelPath="content.yearpublished"}}
+{{md-checks selection=addGame content=allGames optionLabelPath="content.name.content" optionValuePath="objectid"}}
 
 <button type="button" name="button" class='btn' {{action 'addToCollection'}}>Confirm</button>
 {{log addGame}}
