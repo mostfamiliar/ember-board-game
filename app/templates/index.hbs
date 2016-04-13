@@ -1,11 +1,13 @@
 
-<div class="index-header">
-  <h2 class="header-text">A community of board game lovers,<br>
-    conquering territories and eating pretzels,<br>
-    one 2-3hr session at a time.
-  </h2>
-  <a class="waves-effect waves-light btn-large joinBtn">JOIN US</a>
-</div>
+<div class="overlay">
+
+  <div class="index-header">
+    <h2 class="header-text">A community of board game lovers,<br>
+      conquering territories and eating pretzels,<br>
+      one 2-3hr session at a time.
+    </h2>
+    <a class="waves-effect waves-light btn-large joinBtn">JOIN US</a>
+  </div>
   <div class="about-section">
     <div class="about-box1">
       <div class="about-text1">
@@ -21,6 +23,22 @@
       </div>
     </div>
   </div>
+  <div class="call-to-action">
+    <h3>Ready to meet your fellow gamers?</h3>
+    <h5>Sign up with your Board Game Geek username and start connecting with other players.</h5>
+    <a class="waves-effect waves-light btn-large signUpBtn modal-trigger" href="#modal1">Sign Up</a>
 
-{{sign-up-form newUser="newUser"}}
-{{sign-in-form signIn="signIn" allUsers=model}}
+    <h6 class="sign-in-text">Already a member? Click here to log in!</h6>
+  </div>
+
+  <div id="modal1" class="modal">
+  </div>
+  <br><br><br><br><br><br><br><br>
+
+
+
+
+  {{sign-up-form newUser="newUser"}}
+
+  {{sign-in-form signIn="signIn" allUsers=model}}
+</div>
