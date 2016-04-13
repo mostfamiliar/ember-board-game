@@ -1,9 +1,16 @@
 <div class="row">
   <div class="col s6">
-    {{google-map user=model.user}}
+    <h3>{{model.user.firstName}}</h3>
+    <h4>{{model.user.email}}</h4>
+    <h3>Collection:</h3>
+    <ul>
+      {{#each model.user.collection as |game|}}
+      <li>{{game-display-tile game=game}}</li>
+      {{/each}}
+    </ul>
   </div>
   <div class="col s6">
-    {{user-list users=model.allUsers}}
+    {{google-map user=model.user}}
   </div>
 
 </div>

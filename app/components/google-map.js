@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   map: Ember.inject.service('google-map'),
+  whoAmI: Ember.inject.service(),
+  
   showMap: Ember.on('didInsertElement', 'didUpdateAttrs', function(){
     var user = this.get('user');
     var container = this.$('.map-display')[0];
