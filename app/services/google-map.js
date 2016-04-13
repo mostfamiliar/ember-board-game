@@ -15,5 +15,38 @@ export default Ember.Service.extend({
       title: 'User Location'
     });
     return marker;
+  },
+  getDistance(browser, user){
+    console.log(browser.get('userLocation')); //browser is whoami service
+    var origin = this.center(browser.get('userLocation').lat, browser.get('userLocation').lng);
+    var destination = this.center(user.get('userLocation').lat, user.get('userLocation').lng);
+    var service = new this.googleMaps.DistanceMatrixService();
+    var gmapAlias = this.googleMaps;
+    service.getDistanceMatrix(
+      {
+        origins: [origin],
+        destinations: [destination],
+        unitSystem: this.googleMaps.UnitSystem.IMPERIAL,
+        travelMode: this.googleMaps.TravelMode.DRIVING,
+
+      }, callback);
+    function callback(response, status){
+
+      if (status === gmapAlias.DistanceMatrixStatus.OK) {
+        var origins = response.originAddresses;
+        var destinations = response.destinationAddresses;
+        console.log(response);
+        // for (var i = 0; i < origins.length; i++) {
+        //   var results = response.rows[i].elements;
+        //   for (var j = 0; j < results.length; j++) {
+        //     var element = results[j];
+        //     var distance = element.distance.text;
+        //     var duration = element.duration.text;
+        //     var from = origins[i];
+        //     var to = destinations[j];
+        //   }
+        // }
+      }
+    }
   }
 });
