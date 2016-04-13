@@ -10,7 +10,7 @@ export default Ember.Component.extend({
 
   showMap: Ember.on('didInsertElement', 'didUpdateAttrs', 'findDistance', function(){
     var user = this.get('user');
-    var browser = this.get('whoAmI').get('user');
+    var browser = this.get('whoAmI');
     var container = this.$('.map-display')[0];
     var options = {
       center: this.get('map').center(user.get('lat'), user.get('lng')),
