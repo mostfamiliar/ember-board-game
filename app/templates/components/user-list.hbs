@@ -1,0 +1,4 @@
+{{#each users as |user|}}
+<h5>{{#link-to 'user' user.id}}{{user.username}}{{/link-to}}</h5>
+<button {{action '?????' user}}>Show on map</button>
+{{/each}}
