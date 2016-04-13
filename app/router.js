@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('group');
   this.route('user', {path:'/user/:user_id'});
   this.route('admin');
+  this.route('browse');
 });
 
 export default Router;

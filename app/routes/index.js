@@ -35,7 +35,6 @@ export default Ember.Route.extend({
     },
 
     signIn(params){
-      console.log(params);
       this.transitionTo('user', params);
     }
   }
