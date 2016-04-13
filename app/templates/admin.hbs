@@ -1,1 +1,7 @@
-{{outlet}}
+<h1>Welcome, {{model.whoAmI.user.username}}</h1>
+
+{{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
+
+
+    <button {{action 'formShow'}}>Edit Profile</button>
+{{admin-edit}}
