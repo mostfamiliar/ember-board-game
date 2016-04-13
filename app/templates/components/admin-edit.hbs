@@ -1,0 +1,23 @@
+<div class="row">
+  <h2>Update your profile</h2>
+  <form class="col s12">
+    <div class="row">
+      {{md-input value=user.username label='Board Game Geek Username' class="col s6" validate=true}}
+      {{md-input value=user.password label='Change your password' class="col s6" validate=true}}
+    </div>
+    <div class="row">
+      {{md-input value=user.firstName label='First Name' class="col s4" validate=true}}
+      {{md-input value=user.lastName label='Last Name' class="col s8 validate=true"}}
+    </div>
+    <div class="row">
+      {{md-input value=user.address label='Street Address' class="col s12" validate=true}}
+    </div>
+    <div class="row">
+      {{md-input value=user.email type="email" label="Email Address" class="col s8" validate=true}}
+      {{md-select content=user.host value=user.host label="Willing to host?" prompt="Please choose..." optionLabelPath="content.value" optionValuePath="content" class="col s4"}}
+    </div>
+    <div class="row">
+      {{md-textarea value=user.notes label="Notes" class="col s12" validate=true}}
+    </div>
+  </form>
+</div>
