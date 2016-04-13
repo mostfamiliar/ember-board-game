@@ -11,7 +11,24 @@ export default Ember.Route.extend({
       localUser: this.store.query('user', {
         orderBy: 'username',
         equalTo: params.username
-      })
+      }) //this is a freaking array with one object
     });
+  },
+
+  actions: {
+    addGame(params){
+      var model = this.currentModel;
+      var foundRecord = false;
+      model.localUser.forEach(function(game){
+        if(game.get('objectid') === params.gameId){
+          foundRecord = true;
+        }
+      });
+      if (foundRecord === false){
+        var newGame = this.store.createRecord('game', params);
+        newGame.save();
+        console.log(newGame.title);
+      }
+    }
   }
 });
