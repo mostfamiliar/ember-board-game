@@ -16,5 +16,12 @@ export default Model.extend({
   notes: DS.attr(),
   joined: DS.attr('date', {
     defaultValue() {return new Date();}
+  }),
+
+  userLocation: Ember.computed('lat', 'lng', function(){
+    return {
+      lat: this.get('lat'),
+      lng: this.get('lng')
+    };
   })
 });

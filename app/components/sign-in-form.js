@@ -23,8 +23,8 @@ export default Ember.Component.extend({
         alert('Not a valid login combination'); // to change???
       } else {
         alert(currentUser.get('user').get('username') + ' is logged in');
+        this.sendAction('signIn', currentUser.get('user').get('id'));
       }
-      this.sendAction('signIn', currentUser.get('user').get('id'));
     }
   }
 });
