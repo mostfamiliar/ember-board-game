@@ -23,6 +23,7 @@ export default Ember.Component.extend({
       var browserLocation = browser.get('userLocation');
       console.log(browserLocation);
       this.get('map').placeMarker(newMap, browserLocation);
+      newMap.setZoom(11);
     }
   }),
   actions: {
