@@ -11,7 +11,8 @@ export default Ember.Route.extend({
       localUser: this.store.query('user', {
         orderBy: 'username',
         equalTo: params.username
-      }) //this is an array with one object
+      }), //this is an array with one object
+      databaseGames: this.store.findAll('game')
     });
   },
 
@@ -23,18 +24,18 @@ export default Ember.Route.extend({
       var foundRecord = false;
       params.forEach(function(gameid){
         // run through database list of games, not user's list of games
-        model.gameList.forEach(function(game){
+        model.databaseGames.forEach(function(game){
           if(game.get('objectid') === gameid){
             foundRecord = true;
           }
         });
         if (foundRecord === false){
           var gameUrl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20'http%3A%2F%2Fwww.boardgamegeek.com%2Fxmlapi2%2Fthing%3Fid%3D" + gameid + "'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-          console.log(gameUrl);
+          // console.log(gameUrl);
 
           Ember.$.getJSON(gameUrl).then(function(responseJSON){
             var response = responseJSON.query.results.items.item;
-            console.log(response.name[0].value);
+            // console.log(response.name[0].value);
             var attributes = {
               gameId: response.id,
               title: response.name[0].value,
@@ -44,8 +45,12 @@ export default Ember.Route.extend({
               maxPlayers: response.maxplayers.value
             };
             var newGame = self.store.createRecord('game', attributes);
-            newGame.save();
-            //newGame.get('ownedBy').addObject[0](localUser)
+            var user =model.localUser.objectAt(0);
+            newGame.get('ownedBy').addObject(user);
+            newGame.save().then(function(){
+              return user.save();
+            });
+
             //.then (adding rentals/cities)
             console.log(newGame);
 
