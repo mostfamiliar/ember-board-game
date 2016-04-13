@@ -1,6 +1,5 @@
 
 <div class="overlay">
-
   <div class="index-header">
     <h2 class="header-text">A community of board game lovers,<br>
       conquering territories and eating pretzels,<br>
@@ -28,17 +27,36 @@
     <h5>Sign up with your Board Game Geek username and start connecting with other players.</h5>
     <a class="waves-effect waves-light btn-large signUpBtn modal-trigger" href="#modal1">Sign Up</a>
 
-    <h6 class="sign-in-text">Already a member? Click here to log in!</h6>
+    <h6 class="sign-in-text">Already a member? Click <a href="modal2">here</a> to log in!</h6>
   </div>
+
+  <!-- {{#if modalIsOpen}}
+      {{#md-modal close='closeModal' id="modal1"}}
+          <div class="modal-content">
+            {{sign-up-form newUser="newUser"}}
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="waves-effect waves-light btn signUpBtn" {{action "signUp"}}>Sign Up</button>
+              <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                  Cancel
+              </a>
+          </div>
+      {{/md-modal}}
+  {{/if}} -->
 
   <div id="modal1" class="modal">
+    <div class="modal-content">
+    <p>
+      hi. this is a modal
+    </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
   </div>
-  <br><br><br><br><br><br><br><br>
 
 
 
 
-  {{sign-up-form newUser="newUser"}}
-
-  {{sign-in-form signIn="signIn" allUsers=model}}
+  <!-- {{sign-in-form signIn="signIn" allUsers=model}} -->
 </div>
