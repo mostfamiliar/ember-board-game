@@ -24,7 +24,7 @@ export default Ember.Component.extend({
       } else {
         alert(currentUser.get('user').get('username') + ' is logged in');
       }
-      this.sendAction('signIn', currentUser.get('user').get('username'));
+      this.sendAction('signIn', currentUser.get('user').get('id'));
     }
   }
 });

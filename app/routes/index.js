@@ -31,12 +31,12 @@ export default Ember.Route.extend({
           newPerson.save();
         });
       }
-      this.transitionTo('index');
+      this.transitionTo('profile', params.username);
     },
 
     signIn(params){
       console.log(params);
-      this.transitionTo('profile', params);
+      this.transitionTo('user', params);
     }
   }
 });
