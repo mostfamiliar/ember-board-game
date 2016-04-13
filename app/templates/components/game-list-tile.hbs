@@ -1,5 +1,7 @@
+<div class="container">
 
-{{md-checks selection=addGame content=games optionLabelPath="name.content" optionValuePath="objectid"}}
+  <h5>Choose which games you would like to appear on your profile.</h5>
+  {{md-checks selection=addGame content=games optionLabelPath="name.content" optionValuePath="objectid"}}
 
-<button type="button" name="button" class='btn' {{action 'addToCollection'}}>Confirm</button>
-{{log games}}
+  <button type="button" name="button" class='btn' {{action 'addToCollection' 'addToGameList'}}>Confirm</button>
+</div>
