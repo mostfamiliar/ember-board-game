@@ -20,3 +20,17 @@
     </div>
   </form>
 </div>
+
+{{#if modalIsOpen}}
+    {{#md-modal close='closeModal' class=""}}
+        <div class="modal-content">
+          {{sign-up-form newUser="newUser"}}
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="waves-effect waves-light btn signUpBtn" {{action "signUp"}}>Sign Up</button>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}

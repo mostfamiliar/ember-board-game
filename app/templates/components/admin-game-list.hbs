@@ -1,0 +1,7 @@
+<div class="container">
+
+  <h5>Choose which games you would like to play.</h5>
+  {{md-checks selection=addGame content=games optionLabelPath="title" optionValuePath="id"}}
+
+  <button type="button" name="button" class='btn' {{action 'addToWants'}}>Confirm</button>
+</div>
