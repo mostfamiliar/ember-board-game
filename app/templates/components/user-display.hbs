@@ -1,9 +1,6 @@
 <div class="container">
-  <div class="user-header">
-    <!-- <h2>Welcome, {{whoAmI.user.username}}</h2> -->
-  </div>
   <div class="wrapper">
-    <div class="row content1">
+    <div class="row user-content">
       <div class="col s12 m6 l6">
         <div class="public-user-info">
           <div class="user-highlight">
@@ -11,10 +8,10 @@
             <h6>{{user.username}} | {{user.email}}</h6>
           </div>
           <div class="public-user-collection">
-            <h4>Games {{user.firstName}} owns</h4>
-            <ul>
+            <h4>{{user.firstName}}'s Collection:</h4>
+            <ul class="collection">
               {{#each user.collection as |game|}}
-              <li>{{game-display-tile game=game}}</li>
+              <li class="collection-item avatar">{{game-display-tile game=game}}</li>
               {{/each}}
             </ul>
           </div>
@@ -27,12 +24,12 @@
         </div>
       </div>
     </div>
-    <div class="row content2">
-      <div class="col s12 m6 l6">
-        <div class="public-user-wishlist">
-          <h4>Games {{user.firstName}} wants to play</h4>
-        </div>
+    <div class="col s12 m6 l6">
+      <div class="public-user-wishlist">
+        <h4>{{user.firstName}}'s Play List:</h4>
+        <h6>SHOULD THINGS SHOW UP HERE?</h6>
       </div>
     </div>
+
   </div>
 </div>

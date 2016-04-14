@@ -1,7 +1,7 @@
 .about-box1 {
   color: #FAFAFA;
   background-color: #616161;
-  background-color: rgba(63, 60, 60, 1);
+  background-color: #3F3C3C;
   max-width: 65%;
   display: block;
   padding-top: 30px;
@@ -68,7 +68,7 @@
   }
 }
 
-.content1 {
+.user-content {
   padding-bottom: 50px;
 }
 
@@ -89,26 +89,18 @@
   h6 {
     padding-bottom: 10px;
   }
-
-
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .public-user-collection {
   padding-top: 90px;
+  color: #3F3C3C;
 }
 
 .map-content {
   margin-left: 10%;
 }
 
-.map-display {
-  margin-right: 30px;
-}
-
 .public-user-wishlist {
   margin-left: 10%;
+  color: #3F3C3C;
 }
