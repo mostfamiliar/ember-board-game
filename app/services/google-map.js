@@ -15,6 +15,10 @@ export default Ember.Service.extend({
       title: 'User Location'
     });
     map.panTo(marker.getPosition());
-    return marker;
+    var formatted = new this.googleMaps.LatLng(userLocation);
+    return formatted;
   },
+  boundsService(){
+    return new this.googleMaps.LatLngBounds();
+  }
 });

@@ -19,9 +19,13 @@ export default Ember.Component.extend({
       };
       console.log(allOptions);
       var allMap = mappy.findMap(container, allOptions);
+      var mapBounds = mappy.boundsService();
       allUsers.forEach(function(member){
-        mappy.placeMarker(allMap, member.get('userLocation'));
+        var formatted = mappy.placeMarker(allMap, member.get('userLocation'));
+        console.log(formatted);
+        mapBounds.extend(formatted);
       });
+      allMap.fitBounds(mapBounds);
     } else {
       var options = {
         center: mappy.center(user.get('lat'), user.get('lng')),
