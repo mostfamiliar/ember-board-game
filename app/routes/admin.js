@@ -25,6 +25,7 @@ export default Ember.Route.extend({
           }
         });
       });
+      this.transitionTo('admin');
     },
 
     updateProfile(params){
