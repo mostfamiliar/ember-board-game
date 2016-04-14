@@ -3,13 +3,14 @@
   <div class="col s6">
     {{#each users as |user|}}
     <h3>{{user.username}}</h3>
-    <button type="button" class='btn' name="button" {{action 'showDistance' user}}>Find distance from me</button>
+    {{!-- Add logic to prevent guest from getting map--}}
+      <button type="button" class='btn' name="button" {{action 'showDistance' user}}>Find distance from me</button>
     {{/each}}
   </div>
   <div class="col s6">
-    {{#if showDistance}}
-      {{google-map user=findUser showDistance=showDistance}}
+    <button type="button" class='btn' name="button" {{action 'showAll'}}>Show All Users on Map</button>
+    {{#if (or showDistance showAll)}}
+      {{google-map allUsers=users showDistance=showDistance showAll=showAll}}
     {{/if}}
   </div>
 </div>
-{{log findUser}}
