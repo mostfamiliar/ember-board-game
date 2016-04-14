@@ -1,3 +1,14 @@
-{{#each users as |user|}}
-  {{user-tile user=user}}
-{{/each}}
+
+<div class="wrapper">
+
+  <div class="browse-users-header">
+    <h2>Meet Fellow Players</h2>
+    <h4>Visit their profiles to see their game collections and location!</h4>
+  </div>
+
+  <div class="users-list">
+    {{#each users as |user|}}
+    {{user-tile user=user}}
+    {{/each}}
+  </div>
+</div>
