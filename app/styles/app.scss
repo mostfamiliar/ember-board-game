@@ -33,3 +33,9 @@ p.game-display {
   font-size: 12px;
   display: inline;
 }
+
+.lean-modal {
+  /* Hack to get the modal to display right */
+  opacity:1.0;
+  background-color: rgba(73, 82, 90, 0.5);
+}

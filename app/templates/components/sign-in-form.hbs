@@ -1,12 +1,18 @@
-<div class="row">
-  <h2>Sign in</h2>
-  <form class="col s12">
-    <div class="row">
-      {{md-input value=usernameLogin label='Board Game Geek Username' class="col s5" validate=true}}
-      {{md-input value=passwordLogin label='Password' class="col s5" validate=true type="password"}}
-      <div class="col s2">
-        <button type="submit" class="btn" {{action "signIn"}}>Sign In</button>
+<div class="modal-content">
+
+  <div class="row">
+    <h2>Sign in</h2>
+    <form class="col s12">
+      <div class="row">
+        {{md-input value=usernameLogin label='Board Game Geek Username' class="col s5" validate=true}}
+        {{md-input value=passwordLogin label='Password' class="col s5" validate=true type="password"}}
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="waves-effect waves-light btn signUpBtn" {{action "signIn"}}>Sign In</button> {{!-- THESE CLASSES MIGHT NOT BE RIGHT --}}
+  <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+      Cancel
+  </a>
 </div>

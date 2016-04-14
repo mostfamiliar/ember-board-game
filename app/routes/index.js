@@ -18,7 +18,6 @@ export default Ember.Route.extend({
       });
       if (!duplicate){
         var newPerson = this.store.createRecord('user', params);
-        console.log(newPerson);
         newPerson.save();
         var address = params.address.replace(' ', '+');
         var key = config.myApiKey;
@@ -34,8 +33,7 @@ export default Ember.Route.extend({
       this.transitionTo('profile', params.username);
     },
 
-    signIn(params){
-      console.log(params);
+    signIn(){
       this.transitionTo('admin');
     }
   }
