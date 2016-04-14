@@ -1,19 +1,38 @@
-<h2>Welcome, {{whoAmI.user.username}}</h2>
-<div class="row">
-  <div class="col s6">
-    <h3>{{user.firstName}}</h3>
-    <h4>{{user.email}}</h4>
-    <h3>Collection:</h3>
-    <ul>
-      {{#each user.collection as |game|}}
-      <li>{{game-display-tile game=game}}</li>
-      {{/each}}
-    </ul>
+<div class="container">
+  <div class="user-header">
+    <!-- <h2>Welcome, {{whoAmI.user.username}}</h2> -->
   </div>
-  <div class="col s6">
-    {{google-map user=user showDistance=showDistance}}
-    <button type="button" class='btn' name="button" {{action 'showDistance'}}>Find distance from me</button>
+  <div class="wrapper">
+    <div class="row">
+      <div id="public-user-info" class="col s6">
+        <h3>{{user.firstName}}</h3>
+        <h6>Username:</h6>
+        <h6>{{user.username}}</h6>
+        <h6>Email:</h6>
+        <h6>{{user.email}}</h6>
+      </div>
+      <div class="col s6 map">
+        <img class="dummy-img" src="http://www.digicution.com/wp-content/uploads/2012/06/HTML5-Repsonsive-Google-Maps-Tutorial-1.png" alt="placeholder-map" />
+        {{google-map user=user showDistance=showDistance}}
+        <button type="button" class='btn' name="button" {{action 'showDistance'}}>Find distance from me</button>
+      </div>
+      <div class="col s6 public-user-collection">
+        <h4>Games {{user.username}} owns</h4>
+        <ul>
+          {{#each user.collection as |game|}}
+          <li>{{game-display-tile game=game}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col s6 public-user-wishlist">
+        <h4>Games {{user.username}} wants to play</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l6">CONTENT 1</div>
+      <div class="col s12 m6 l6">CONTENT 2</div>
+      <div class="col s12 m6 l6">CONTENT 3</div>
+      <div class="col s12 m6 l6">CONTENT 4</div>
+    </div>
   </div>
-
 </div>
-{{yield}}
