@@ -30,11 +30,11 @@ export default Ember.Service.extend({
 
       }, callback);
     function callback(response, status){
-      console.log(response);
       if (status === gmapAlias.DistanceMatrixStatus.OK) {
-        var origins = response.originAddresses;
-        var destinations = response.destinationAddresses;
+        // var origins = response.originAddresses;
+        // var destinations = response.destinationAddresses;
         var distance = response.rows[0].elements[0].distance.value;
+        return distance;
         console.log(distance);
         // for (var i = 0; i < origins.length; i++) {
         //   var results = response.rows[i].elements;
