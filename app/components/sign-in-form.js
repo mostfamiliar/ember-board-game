@@ -15,7 +15,7 @@ export default Ember.Component.extend({
       };
       var matched = false;
       var currentUser = this.get('whoAmI');
-      this.allUsers.forEach(function(user){
+      this.get('allUsers').forEach(function(user){
         if(user.get('username') === params.username && user.get('password') === params.password){
           currentUser.logIn(user);
           matched = true;

@@ -9,9 +9,11 @@ export default Ember.Component.extend({
   actions: {
     showDistance(user){
       this.set('findUser', user);
-      this.toggleProperty('showDistance');
+      this.set('showAll', false);
+      this.set('showDistance', true);
     },
     showAll(){
+      this.set('showDistance', false);
       this.toggleProperty('showAll');
     }
   }

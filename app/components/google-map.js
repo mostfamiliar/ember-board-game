@@ -9,20 +9,16 @@ export default Ember.Component.extend({
     var browser = this.get('whoAmI');
     var container = this.$('.map-display')[0];
     var mappy = this.get('map');
-    console.log(this.get('showAll'));
     if(this.get('showAll')){
       var allUsers = this.get('allUsers');
-      console.log(allUsers);
       var allOptions = {
         center: mappy.center(browser.get('userLocation').lat, browser.get('userLocation').lng),
         zoom: 15
       };
-      console.log(allOptions);
       var allMap = mappy.findMap(container, allOptions);
       var mapBounds = mappy.boundsService();
       allUsers.forEach(function(member){
         var formatted = mappy.placeMarker(allMap, member.get('userLocation'));
-        console.log(formatted);
         mapBounds.extend(formatted);
       });
       allMap.fitBounds(mapBounds);
@@ -33,12 +29,15 @@ export default Ember.Component.extend({
       };
       var userLocation = user.get('userLocation');
       var newMap = mappy.findMap(container, options);
-      mappy.placeMarker(newMap, userLocation);
+      var twoMapBounds = mappy.boundsService();
+      var myFormatted = mappy.placeMarker(newMap, userLocation);
+      twoMapBounds.extend(myFormatted);
       if(this.get('showDistance')){
         var browserLocation = browser.get('userLocation');
-        mappy.placeMarker(newMap, browserLocation);
-        newMap.setZoom(11);
+        var browserFormatted = mappy.placeMarker(newMap, browserLocation);
+        twoMapBounds.extend(browserFormatted);
       }
+      newMap.fitBounds(twoMapBounds);
     }
   }),
   actions: {
