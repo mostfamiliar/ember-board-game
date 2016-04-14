@@ -1,16 +1,23 @@
 <div class="container">
   <div class="user-header">
-    <h2>Welcome, {{whoAmI.user.username}}</h2>
+    <!-- <h2>Welcome, {{whoAmI.user.username}}</h2> -->
   </div>
   <div class="wrapper">
     <div class="row content1">
       <div class="col s12 m6 l6">
-        <div class="basic-user-info">
-          <h3>{{user.firstName}}</h3>
-          <h6>Username:</h6>
-          <h6>{{user.username}}</h6>
-          <h6>Email:</h6>
-          <h6>{{user.email}}</h6>
+        <div class="public-user-info">
+          <div class="user-highlight">
+            <h3>{{user.firstName}}</h3>
+            <h6>{{user.username}} | {{user.email}}</h6>
+          </div>
+          <div class="public-user-collection">
+            <h4>Games {{user.firstName}} owns</h4>
+            <ul>
+              {{#each user.collection as |game|}}
+              <li>{{game-display-tile game=game}}</li>
+              {{/each}}
+            </ul>
+          </div>
         </div>
       </div>
       <div class="col s12 m6 l6">
@@ -22,27 +29,10 @@
     </div>
     <div class="row content2">
       <div class="col s12 m6 l6">
-        <div class="public-user-collection">
-          <h4>Games {{user.username}} owns</h4>
-          <ul>
-            {{#each user.collection as |game|}}
-            <li>{{game-display-tile game=game}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-      <div class="col s12 m6 l6">
         <div class="public-user-wishlist">
-          <h4>Games {{user.username}} wants to play</h4>
+          <h4>Games {{user.firstName}} wants to play</h4>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col s12 m6 l6">CONTENT 1</div>
-      <div class="col s12 m6 l6">CONTENT 2</div>
-      <div class="col s12 m6 l6">CONTENT 3</div>
-      <div class="col s12 m6 l6">CONTENT 4</div>
     </div>
   </div>
 </div>
