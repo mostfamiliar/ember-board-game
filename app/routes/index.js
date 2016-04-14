@@ -2,17 +2,23 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Route.extend({
+  whoAmI: Ember.inject.service(),
+
   model(){
-    return this.store.findAll('user');
+    return Ember.RSVP.hash({
+      users: this.store.findAll('user'),
+      whoAmI: this.get('whoAmI')
+    });
   },
 
   actions: {
-    newUser(params){
+    newUser(params, member){
       var model = this.currentModel;
       var duplicate = false;
-      model.forEach(function(user){
+      var currentUser = model.whoAmI;
+      model.users.forEach(function(user){
         if(params.username === user.get('username')){
-          alert("That username already has an account");
+          alert("That username is already taken"); // should this happen BEFORE we clear the form fields???
           duplicate = true;
         }
       });
@@ -28,9 +34,14 @@ export default Ember.Route.extend({
           newPerson.set('lat', location.lat);
           newPerson.set('lng', location.lng);
           newPerson.save();
+          currentUser.logIn(newPerson);
         });
+        if(member){
+          this.transitionTo('profile', params.username);
+        } else {
+          this.transitionTo('admin');
+        }
       }
-      this.transitionTo('profile', params.username);
     },
 
     signIn(){

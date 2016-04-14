@@ -27,7 +27,7 @@ export default Ember.Component.extend({
       this.set('email', '');
       console.log(params);
       console.log(member);
-      //this.sendAction('newUser', params, member);
+      this.sendAction('newUser', params, member);
     }
   }
 });
