@@ -47,3 +47,45 @@
 .sign-in-text {
   padding-top: 10px;
 }
+
+#staggered-list {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.staggered {
+  opacity: 0;
+}
+
+#users {
+  letter-spacing: 1px;
+  transition: all 400ms ease;
+  text-align: center;
+  &:hover {
+    color: #29B6F6;
+    transition: all 400ms ease;
+    letter-spacing: 3px;
+  }
+}
+
+.content1 {
+  padding-bottom: 50px;
+}
+
+
+.basic-user-info {
+  // margin-top: 200px
+  // margin-left: 20%;
+}
+
+.map-content {
+  margin-left: 10%;
+}
+
+.public-user-collection {
+  margin-left: 10%;
+}
+
+.public-user-wishlist {
+  margin-left: 10%;
+}

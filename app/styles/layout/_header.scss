@@ -19,3 +19,23 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.modal-header {
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  hr {
+    color: blue;
+    width: 550px;
+    margin-bottom: 20px;
+  }
+}
+
+.browse-users-header {
+  text-align: center;
+  margin-top: 1px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: rgba(251, 140, 0, 1);
+  background-color: #FAFAFA;
+}

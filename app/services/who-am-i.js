@@ -10,6 +10,7 @@ export default Ember.Service.extend({
   logOut(){
     this.set('user', {username: "Guest", id: 0});
   },
+  
 
   userLocation: Ember.computed('user.lat', 'user.lng', function(){
     return {

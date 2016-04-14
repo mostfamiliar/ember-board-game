@@ -1,27 +1,43 @@
 <div class="modal-content">
   <div class="row">
-    <h2>New User Sign Up</h2>
+    <div class="modal-header">
+      <h2>Join our tribe!</h2>
+      <hr>
+    </div>
     <form class="col s12">
       <div class="row">
-        {{md-input value=username label='Board Game Geek Username' class="col s6" validate=true}}
-        {{md-input value=password label='Password (not the same as at BGG)' class="col s6" validate=true type="password"}}
+        {{md-switch checked=bggMember onLabel="Member of Board Game Geek" offLabel="Not Signed Up Yet"}}
+      </div>
+      <div class="row">
+        {{#if bggMember}}
+          {{md-input value=username label='Board Game Geek Username' class="col s6" validate=true}}
+          {{md-input value=password label='Password (not the same as at BGG)' class="col s6" validate=true type="password"}}
+        {{else}}
+          {{md-input value=username label='Game Set Match Username' class="col s6" validate=true}}
+          {{md-input value=password label='Password' class="col s6" validate=true type="password"}}
+        {{/if}}
       </div>
       <div class="row">
         {{md-input value=firstName label='First Name' class="col s4" validate=true}}
         {{md-input value=lastName label='Last Name' class="col s8" validate=true}}
       </div>
       <div class="row">
-        {{md-input value=address label='Street Address' class="col s12" validate=true}}
+        {{md-input value=address label='Address (street, city, state)' class="col s12" validate=true}}
       </div>
       <div class="row">
-        {{md-input value=email type="email" label="Email Address" validate=true class="col s4"}}
+        {{md-input value=email type="email" label="Email Address" validate=true class="col s6"}}
+        <div class="col s6">
+          <p class="right">
+            {{md-switch checked=hostValue onLabel="Willing to Host" offLabel="Not Able to Host"}}
+          </p>
+        </div>
       </div>
     </form>
   </div>
 </div>
 <div class="modal-footer">
   <button type="submit" class="waves-effect waves-light btn signUpBtn" {{action "signUp"}}>Sign Up</button>
-  <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
+  <!-- <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeModal'}}>
       Cancel
-  </a>
+  </a> -->
 </div>
