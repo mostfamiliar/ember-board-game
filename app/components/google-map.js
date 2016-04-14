@@ -22,11 +22,11 @@ export default Ember.Component.extend({
       zoom: 15
     };
     var userLocation = user.get('userLocation');
+    console.log(userLocation);
     var newMap = this.get('map').findMap(container, options);
     this.get('map').placeMarker(newMap, userLocation);
     if(this.get('showDistance')){
       var browserLocation = browser.get('userLocation');
-      console.log(browserLocation);
       this.get('map').placeMarker(newMap, browserLocation);
       newMap.setZoom(11);
     }
