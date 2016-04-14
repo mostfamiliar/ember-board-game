@@ -1,7 +1,8 @@
-<div class="container">
-
+{{#if addDbGames}}
   <h5>Choose which games you would like to play.</h5>
   {{md-checks selection=addGame content=sortedGames optionLabelPath="title" optionValuePath="id"}}
 
   <button type="button" name="button" class='btn' {{action 'addToWants'}}>Confirm</button>
-</div>
+{{else}}
+  {{md-btn icon='mdi-action-favorite' class="waves-effect waves-light btn" iconPosition='right' text='Add More Games You Want To Play' action='addDbGames'}}
+{{/if}}

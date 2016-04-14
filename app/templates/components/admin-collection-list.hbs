@@ -1,0 +1,8 @@
+{{#if addCollectionGames}}
+  <h5>Choose which games you would like to play.</h5>
+  {{md-checks selection=addGame content=myCollection optionLabelPath="title" optionValuePath="id"}}
+
+  <button type="button" name="button" class='btn' {{action 'addToCollection'}}>Confirm</button>
+{{else}}
+  {{md-btn btnIcon='mdi-library-add' class="waves-effect waves-light btn" iconPosition='right' text='Add More Games From Your Collection' action='addCollectionGames'}}
+{{/if}}

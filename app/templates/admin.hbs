@@ -1,6 +1,10 @@
-<h1>Welcome, {{model.whoAmI.user.username}}</h1>
+<div class="container">
 
-{{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
+  <h1>Welcome, {{model.whoAmI.user.username}}</h1>
 
+  {{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
+  {{admin-collection-list}}
+<div class="divider"></div>
 
-{{admin-edit updateProfile="updateProfile"}}
+  {{admin-edit updateProfile="updateProfile"}}
+</div>
