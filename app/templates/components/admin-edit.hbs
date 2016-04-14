@@ -1,8 +1,8 @@
 {{#if hideProfile}}
-<button type="button" name="button" class='btn'{{action 'formShow'}}>Edit Profile</button>
+<a type="button" name="button" class='waves-effect waves-light btn signUpBtn'{{action 'formShow'}}>Edit Profile</a>
 {{else}}
 <div class="row">
-  <button type="button" name="button" class='btn'{{action 'formShow'}}>Hide Profile</button>
+  <a type="button" name="button" class='waves-effect waves-light btn signUpBtn'{{action 'formShow'}}>Hide Profile</a>
 
   <h2>Update your profile</h2>
   <form class="col s12">
@@ -28,7 +28,7 @@
     <div class="row">
       {{md-textarea value=user.notes label="Notes" class="col s12" validate=true}}
     </div>
-    {{md-btn icon='mdi-content-send' class="waves-effect waves-light btn" iconPosition='right' text='Submit' action='editProfile'}}
+    {{md-btn icon='mdi-content-send' class="waves-effect waves-light btn signUpBtn" iconPosition='right' text='Submit' action='editProfile'}}
   </form>
 </div>
 {{/if}}
