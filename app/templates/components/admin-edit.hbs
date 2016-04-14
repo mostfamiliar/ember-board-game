@@ -1,23 +1,34 @@
+{{#if hideProfile}}
+<button type="button" name="button" class='btn'{{action 'formShow'}}>Edit Profile</button>
+{{else}}
 <div class="row">
+  <button type="button" name="button" class='btn'{{action 'formShow'}}>Hide Profile</button>
+
   <h2>Update your profile</h2>
   <form class="col s12">
     <div class="row">
-      {{md-input value=user.username label='Board Game Geek Username' class="col s6" validate=true}}
+      {{md-input value=user.username label='Update Username' class="col s6" validate=true}}
       {{md-input value=user.password label='Change your password' class="col s6" validate=true}}
     </div>
     <div class="row">
       {{md-input value=user.firstName label='First Name' class="col s4" validate=true}}
-      {{md-input value=user.lastName label='Last Name' class="col s8 validate=true"}}
+      {{md-input value=user.lastName label='Last Name' class="col s8" validate=true}}
     </div>
     <div class="row">
-      {{md-input value=user.address label='Street Address' class="col s12" validate=true}}
+      {{md-input value=user.address label='Update Street Address' class="col s12" validate=true}}
     </div>
     <div class="row">
-      {{md-input value=user.email type="email" label="Email Address" class="col s8" validate=true}}
-      {{md-select content=user.host value=user.host label="Willing to host?" prompt="Please choose..." optionLabelPath="content.value" optionValuePath="content" class="col s4"}}
+      {{md-input value=user.email type="email" label="Email Address" class="col s6" validate=true}}
+      <div class="col s6">
+        <p class="center">
+          {{md-switch checked=hostValue value=user.host onLabel="Willing to Host" offLabel="Not Able to Host"}}
+        </p>
+      </div>
     </div>
     <div class="row">
       {{md-textarea value=user.notes label="Notes" class="col s12" validate=true}}
     </div>
+    {{md-btn icon='mdi-content-send' class="waves-effect waves-light btn" iconPosition='right' text='Submit' action='editProfile'}}
   </form>
 </div>
+{{/if}}

@@ -20,14 +20,15 @@ export default Ember.Route.extend({
     addToGameList(params){
       var self = this;
       var model = this.currentModel;
-      var foundRecord = false;
       var foundGame;
+      console.log(model.databaseGames);
       params.forEach(function(gameid){
+        var foundRecord = false;
         // run through database list of games, not user's list of games
+        console.log(gameid);
         model.databaseGames.forEach(function(game){
-          console.log(game.get("gameId"));
-          console.log(gameid);
           if(game.get('gameId') === gameid){
+            console.log(game.get('gameId'));
             foundRecord = true;
             foundGame = game;
           }
@@ -37,10 +38,15 @@ export default Ember.Route.extend({
 
           Ember.$.getJSON(gameUrl).then(function(responseJSON){
             var response = responseJSON.query.results.items.item;
-
+            var thisTitle;
+            if(Ember.isArray(response.name)){
+              thisTitle = response.name[0].value;
+            } else {
+              thisTitle = response.name.value;
+            }
             var attributes = {
               gameId: response.id,
-              title: response.name[0].value,
+              title: thisTitle,
               image: response.image,
               description: response.description,
               published: response.yearpublished.value,
@@ -53,7 +59,6 @@ export default Ember.Route.extend({
             newGame.save().then(function(){
               return user.save();
             });
-            console.log(newGame);
           });
         } else {
           var user = model.localUser.objectAt(0);
@@ -64,6 +69,7 @@ export default Ember.Route.extend({
           });
         }
       });
+      this.transitionTo('admin');
     }
   }
 });

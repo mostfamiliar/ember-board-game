@@ -6,8 +6,16 @@
     </div>
     <form class="col s12">
       <div class="row">
-        {{md-input value=username label='Board Game Geek Username' class="col s6" validate=true}}
-        {{md-input value=password label='Password (not the same as at BGG)' class="col s6" validate=true type="password"}}
+        {{md-switch checked=bggMember onLabel="Member of Board Game Geek" offLabel="Not Signed Up Yet"}}
+      </div>
+      <div class="row">
+        {{#if bggMember}}
+          {{md-input value=username label='Board Game Geek Username' class="col s6" validate=true}}
+          {{md-input value=password label='Password (not the same as at BGG)' class="col s6" validate=true type="password"}}
+        {{else}}
+          {{md-input value=username label='Game Set Match Username' class="col s6" validate=true}}
+          {{md-input value=password label='Password' class="col s6" validate=true type="password"}}
+        {{/if}}
       </div>
       <div class="row">
         {{md-input value=firstName label='First Name' class="col s4" validate=true}}
@@ -17,7 +25,12 @@
         {{md-input value=address label='Address (street, city, state)' class="col s12" validate=true}}
       </div>
       <div class="row">
-        {{md-input value=email type="email" label="Email Address" validate=true class="col s4"}}
+        {{md-input value=email type="email" label="Email Address" validate=true class="col s6"}}
+        <div class="col s6">
+          <p class="right">
+            {{md-switch checked=hostValue onLabel="Willing to Host" offLabel="Not Able to Host"}}
+          </p>
+        </div>
       </div>
     </form>
   </div>
