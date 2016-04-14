@@ -1,11 +1,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  max-width: 1100px;
 }
 
 .overlay {
   background-color: #F5F7FB;
+}
+
+.wrapper {
+  background-color: #FAFAFA;
 }
