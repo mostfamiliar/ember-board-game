@@ -48,7 +48,22 @@
   padding-top: 10px;
 }
 
-.users-list {
+#staggered-list {
   text-align: center;
   padding-bottom: 30px;
+}
+
+.staggered {
+  opacity: 0;
+}
+
+#users {
+  letter-spacing: 1px;
+  transition: all 400ms ease;
+  text-align: center;
+  &:hover {
+    color: #29B6F6;
+    transition: all 400ms ease;
+    letter-spacing: 3px;
+  }
 }

@@ -1,17 +1,21 @@
 
 {{#md-navbar homeroute="index" name='Game. Set. Match.' class='light-green lighten-1'}}
-  {{#link-to 'browse' tagName='li' class="right"}}
+  {{#link-to 'browse' tagName='li' id="browse" class="right"}}
     {{link-to 'Browse Users' 'browse'}}
   {{/link-to}}
 {{/md-navbar}}
+<div class="main">
 
   {{outlet}}
-<div class="container">
+</div>
+
+
+<!-- <div class="container"> -->
   <div class="footer">
     <hr>
     <p>Created by Torrence Stratton, Brad London, Jessica Fix, &amp; Abby Rolling | &copy; 2016</p>
   </div>
-</div>
+<!-- </div> -->
 
 {{!-- ember-cli-materialize modal container --}}
 {{md-modal-container}}
