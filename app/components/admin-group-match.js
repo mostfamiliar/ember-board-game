@@ -5,20 +5,21 @@ export default Ember.Component.extend({
   currentUser: Ember.computed.alias('whoAmI.user.wantToPlay'),
   actions: {
     matchByGame(users){
-      // var myGames = this.get('whoAmI').get('user').get('wantToPlay');
-      // console.log(myGames.objectAt(0));
-      users.forEach(function(user){
-        console.log(user.get('username'));
-      })
-      for(var i=0; i < this.get('users.length'); i++)
-      {
-        var singleUser = this.get('users').objectAt(i);
-        var gameList = singleUser.get('wantToPlay');
-        gameList.forEach(function(game){
-          console.log(game.get('title'));
+      var myGames = this.get('whoAmI').get('user').get('wantToPlay');
+      var gamesMatched = [];
+      myGames.forEach(function(currentGame){
+        var currentGameTitle = currentGame.get('title');
+        users.forEach(function(user){
+          var gameList = user.get('wantToPlay');
+          gameList.forEach(function(game){
+            var userGameTitle = game.get('title');
+            if (userGameTitle === currentGameTitle){
+              gamesMatched.push(currentGameTitle);
+            }
+          });
         });
-      }
-
+    });
+    console.log(gamesMatched);
     }
   }
 });
