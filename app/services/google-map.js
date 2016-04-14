@@ -17,7 +17,6 @@ export default Ember.Service.extend({
     return marker;
   },
   getDistance(browser, user){
-    console.log(browser.get('userLocation')); //browser is whoami service
     var origin = this.center(browser.get('userLocation').lat, browser.get('userLocation').lng);
     var destination = this.center(user.get('userLocation').lat, user.get('userLocation').lng);
     var service = new this.googleMaps.DistanceMatrixService();
@@ -31,11 +30,12 @@ export default Ember.Service.extend({
 
       }, callback);
     function callback(response, status){
-
       if (status === gmapAlias.DistanceMatrixStatus.OK) {
-        var origins = response.originAddresses;
-        var destinations = response.destinationAddresses;
-        console.log(response);
+        // var origins = response.originAddresses;
+        // var destinations = response.destinationAddresses;
+        var distance = response.rows[0].elements[0].distance.value;
+        return distance;
+        console.log(distance);
         // for (var i = 0; i < origins.length; i++) {
         //   var results = response.rows[i].elements;
         //   for (var j = 0; j < results.length; j++) {

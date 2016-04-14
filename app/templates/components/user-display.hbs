@@ -1,6 +1,6 @@
 <div class="container">
   <div class="user-header">
-    <!-- <h2>Welcome, {{whoAmI.user.username}}</h2> -->
+    <h2>Welcome, {{whoAmI.user.username}}</h2>
   </div>
   <div class="wrapper">
     <div class="row content1">
@@ -15,9 +15,9 @@
       </div>
       <div class="col s12 m6 l6">
         <div class="map-content">
-          <img class="dummy-img" src="http://www.digicution.com/wp-content/uploads/2012/06/HTML5-Repsonsive-Google-Maps-Tutorial-1.png" alt="placeholder-map" />
-          <!-- {{google-map user=user showDistance=showDistance}} -->
-          <!-- <button type="button" class='btn' name="button" {{action 'showDistance'}}>Find distance from me</button> -->
+          <!-- <img class="dummy-img" src="http://www.digicution.com/wp-content/uploads/2012/06/HTML5-Repsonsive-Google-Maps-Tutorial-1.png" alt="placeholder-map" /> -->
+          {{google-map user=user showDistance=showDistance}}
+          <button type="button" class='btn' name="button" {{action 'showDistance'}}>Find distance from me</button>
         </div>
       </div>
     </div>
@@ -26,9 +26,9 @@
         <div class="public-user-collection">
           <h4>Games {{user.username}} owns</h4>
           <ul>
-            <!-- {{#each user.collection as |game|}}
+            {{#each user.collection as |game|}}
             <li>{{game-display-tile game=game}}</li>
-            {{/each}} -->
+            {{/each}}
           </ul>
         </div>
       </div>
