@@ -8,10 +8,8 @@
   </div>
   <div class="col s6">
     {{#if showDistance}}
-      {{google-map users=users showDistance=showDistance}}
+      {{google-map user=findUser showDistance=showDistance}}
     {{/if}}
   </div>
 </div>
-
-
-{{userList}}
+{{log findUser}}
