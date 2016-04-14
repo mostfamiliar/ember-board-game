@@ -1,0 +1,12 @@
+<h2>Welcome, {{whoAmI.user.username}}</h2>
+<div class="row">
+  <div class="col s6">
+    {{#each users as |user|}}
+    <h3>{{user.username}}</h3>
+     <button type="button" class='btn' name="button" {{action 'showDistance'}}>Find distance from me</button>
+    {{/each}}
+  </div>
+  <div class="col s6">
+    {{google-map user=whoAmI.user showDistance=showDistance}}
+  </div>
+</div>
