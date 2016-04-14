@@ -20,16 +20,14 @@
       <div class="col s12 m6 l6">
         <div class="map-content">
           {{google-map user=user showDistance=showDistance}}
-          <button type="button" class='btn' name="button" {{action 'showDistance'}}>Find distance from me</button>
+          <a class='class="waves-effect waves-light btn signUpBtn'  {{action 'showDistance'}}>Find distance from me</a>
         </div>
       </div>
     </div>
     <div class="col s12 m6 l6">
       <div class="public-user-wishlist">
         <h4>{{user.firstName}}'s Play List:</h4>
-        <h6>SHOULD THINGS SHOW UP HERE?</h6>
       </div>
     </div>
-
   </div>
 </div>
