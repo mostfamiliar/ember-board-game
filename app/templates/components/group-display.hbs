@@ -3,13 +3,15 @@
   <div class="col s6">
     {{#each users as |user|}}
     <h3>{{user.username}}</h3>
-     <button type="button" class='btn' name="button" {{action 'showDistance' user}}>Find distance from me</button>
+    <button type="button" class='btn' name="button" {{action 'showDistance' user}}>Find distance from me</button>
     {{/each}}
   </div>
   <div class="col s6">
     {{#if showDistance}}
-      {{google-map user=findUser showDistance=showDistance}}
+      {{google-map users=users showDistance=showDistance}}
     {{/if}}
   </div>
 </div>
-{{log findUser}}
+
+
+{{userList}}

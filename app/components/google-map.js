@@ -14,7 +14,11 @@ export default Ember.Component.extend({
   }),
 
   showMap: Ember.on('didInsertElement', 'didUpdateAttrs', 'showDistance', function(){
-    var user = this.get('user');
+    var users = this.get('users');
+    for(var i = 0; i <= this.get('users.length'); i++) {
+      var user = this.get('users').objectAt(i);
+      console.log(user);
+    }
     var browser = this.get('whoAmI');
     var container = this.$('.map-display')[0];
     var options = {
