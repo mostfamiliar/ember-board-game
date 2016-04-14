@@ -1,10 +1,18 @@
 <div class="container">
-
   <h1>Welcome, {{model.whoAmI.user.username}}</h1>
+  <div class="row">
+    <div class="col s4">
+      {{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
+      {{#link-to 'profile' model.whoAmI.user.username}}
+        {{md-btn btnIcon='mdi-library-add' class="waves-effect waves-light btn" iconPosition='right' text='Add More Games From Your Collection'}}
+      {{/link-to}}
+      <div class="divider"></div>
 
-  {{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
-  {{admin-collection-list}}
-<div class="divider"></div>
+      {{admin-edit updateProfile="updateProfile"}}
+    </div>
+    <div class="col s8">
+      {{admin-collection-list}}
+    </div>
 
-  {{admin-edit updateProfile="updateProfile"}}
+  </div>
 </div>
