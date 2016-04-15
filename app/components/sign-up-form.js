@@ -16,17 +16,17 @@ export default Ember.Component.extend({
         host: this.get('hostValue'),
         lat: '90', //to change
         lng: '90', //to change
-        notes: ''
+        notes: '',
+        member: this.get('bggMember')
       };
-      var member = this.get('bggMember');
       this.set('username', '');
       this.set('password', '');
       this.set('firstName', '');
       this.set('lastName', '');
       this.set('address', '');
       this.set('email', '');
-      console.log(member);
-      this.sendAction('newUser', params, member);
+      console.log(params.member);
+      this.sendAction('newUser', params);
     }
   }
 });

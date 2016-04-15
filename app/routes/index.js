@@ -12,8 +12,11 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    newUser(params, member){
-      console.log(member);
+    newUser(params){
+      console.log(params.member);
+      var member = params.member;
+      delete params.member;
+      console.log(params);
       var model = this.currentModel;
       var duplicate = false;
       var currentUser = model.whoAmI;
