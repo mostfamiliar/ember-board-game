@@ -1,0 +1,5 @@
+{{#each users as |user|}}
+{{user.username}}
+{{/each}}
+<button class="btn" {{action 'matchByGame' users}}>Find matches</button>
+{{log currentUser}}

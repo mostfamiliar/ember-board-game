@@ -6,7 +6,8 @@ export default Ember.Route.extend({
   model(){
     return Ember.RSVP.hash({
       whoAmI: this.get('whoAmI'),
-      databaseGames: this.store.findAll('game')
+      databaseGames: this.store.findAll('game'),
+      users: this.store.findAll('user', {include: 'wantToPlay'})
     });
   },
 
@@ -25,6 +26,7 @@ export default Ember.Route.extend({
           }
         });
       });
+      this.transitionTo('admin');
     },
 
     updateProfile(params){

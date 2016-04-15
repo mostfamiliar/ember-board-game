@@ -11,7 +11,7 @@ export default Ember.Component.extend({
     },
 
     addToWants(){
-      // console.log(this.get('addGame'));
+      this.set('addDbGames', false);
       this.sendAction("addToWantList", this.get('addGame'));
     }
   }
