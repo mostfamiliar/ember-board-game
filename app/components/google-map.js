@@ -4,36 +4,41 @@ export default Ember.Component.extend({
   map: Ember.inject.service('google-map'),
   whoAmI: Ember.inject.service(),
 
-  findDistance: Ember.computed('showDistance', function(){
-    var browser = this.get('whoAmI');
+  showMap: Ember.on('didInsertElement', 'didUpdateAttrs', 'showDistance', 'showAll', function(){
     var user = this.get('user');
-
-    if(this.get('showDistance')){
-      this.get('map').getDistance(browser, user);
-    }
-  }),
-
-  showMap: Ember.on('didInsertElement', 'didUpdateAttrs', 'showDistance', function(){
-    // for(var i=0; i < this.get('users.length'); i++){
-    //     var eachUser = this.get('users').objectAt(i);
-    //
-
-      var user = this.get('user');
-      var browser = this.get('whoAmI');
-      var container = this.$('.map-display')[0];
+    var browser = this.get('whoAmI');
+    var container = this.$('.map-display')[0];
+    var mappy = this.get('map');
+    if(this.get('showAll')){
+      var allUsers = this.get('allUsers');
+      var allOptions = {
+        center: mappy.center(browser.get('userLocation').lat, browser.get('userLocation').lng),
+        zoom: 15
+      };
+      var allMap = mappy.findMap(container, allOptions);
+      var mapBounds = mappy.boundsService();
+      allUsers.forEach(function(member){
+        var formatted = mappy.placeMarker(allMap, member.get('userLocation'));
+        mapBounds.extend(formatted);
+      });
+      allMap.fitBounds(mapBounds);
+    } else {
       var options = {
-        center: this.get('map').center(user.get('lat'), user.get('lng')),
+        center: mappy.center(user.get('lat'), user.get('lng')),
         zoom: 15
       };
       var userLocation = user.get('userLocation');
-      var newMap = this.get('map').findMap(container, options);
-      this.get('map').placeMarker(newMap, userLocation);
+      var newMap = mappy.findMap(container, options);
+      var twoMapBounds = mappy.boundsService();
+      var myFormatted = mappy.placeMarker(newMap, userLocation);
+      twoMapBounds.extend(myFormatted);
       if(this.get('showDistance')){
         var browserLocation = browser.get('userLocation');
-        this.get('map').placeMarker(newMap, browserLocation);
-        newMap.setZoom(11);
+        var browserFormatted = mappy.placeMarker(newMap, browserLocation);
+        twoMapBounds.extend(browserFormatted);
       }
-    // }
+      newMap.fitBounds(twoMapBounds);
+    }
   }),
   actions: {
 
