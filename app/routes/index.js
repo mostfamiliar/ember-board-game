@@ -13,6 +13,7 @@ export default Ember.Route.extend({
 
   actions: {
     newUser(params, member){
+      console.log(member);
       var model = this.currentModel;
       var duplicate = false;
       var currentUser = model.whoAmI;
@@ -29,7 +30,6 @@ export default Ember.Route.extend({
         var key = config.myApiKey;
         var locUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key=' + key;
         Ember.$.getJSON(locUrl).then(function(responseJSON){
-          console.log(responseJSON.results);
           var location = responseJSON.results[0].geometry.location;
           newPerson.set('lat', location.lat);
           newPerson.set('lng', location.lng);
