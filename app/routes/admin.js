@@ -70,6 +70,16 @@ export default Ember.Route.extend({
         }
         newGroup.save();
       }
+    },
+
+    deleteGroup(group){
+      var members = group.get('members'); //array of users
+      members.forEach(function(user){
+        user.get('groups').removeObject(group);
+        user.save();
+      });
+      group.destroyRecord();
+      this.transitionTo('admin');
     }
   }
 });
