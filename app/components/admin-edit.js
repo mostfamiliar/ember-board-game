@@ -23,11 +23,12 @@ export default Ember.Component.extend({
         address: this.get('user.address'),
         email: this.get('user.email'),
         host: this.get('hostValue'),
-        lat: '90', //to change
+        lat: '90', //to change try this.get('user').get('lat')
         lng: '90', //to change
         notes: this.get('user.notes')
       };
       console.log(params);
+      this.toggleProperty('hideProfile');
       this.sendAction('updateProfile', params);
     }
   }

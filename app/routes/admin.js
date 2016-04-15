@@ -60,14 +60,15 @@ export default Ember.Route.extend({
         };
         var newGroup = this.store.createRecord('group', params);
         newGroup.get('members').addObject(user);
+        user.save();
         for(var j = 0 ; j < thisGroup.length; j++){
           var thisUser = thisGroup[j].user;
+          console.log(thisUser.get('username'));
           newGroup.get('members').addObject(thisUser);
-          console.log(newGroup);
-          newGroup.save().then(function(){
-            thisUser.save();
-          });
+          console.log(newGroup.get('members').get('length'));
+          thisUser.save();
         }
+        newGroup.save();
       }
     }
   }
