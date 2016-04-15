@@ -20,6 +20,12 @@
   &:hover {
     background-color: #FFA726 !important;
   }
+  &:active {
+    background-color: #FFA726 !important;
+  }
+  &:focus {
+    background-color: #FFA726 !important;
+  }
 }
 
 
@@ -31,12 +37,24 @@
   &:hover {
     background-color: #A5D6A7;
   }
+  &:active {
+    background-color: #A5D6A7;
+  }
+  &:focus {
+    background-color: #A5D6A7;
+  }
 }
 
 .btn {
   background-color: rgba(139, 193, 117, .9);
   color: #FAFAFA;
   &:hover {
+    background-color: #A5D6A7;
+  }
+  &:active {
+    background-color: #A5D6A7;
+  }
+  &:focus {
     background-color: #A5D6A7;
   }
 }
