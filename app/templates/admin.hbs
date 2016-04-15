@@ -10,7 +10,7 @@
           {{md-btn btnIcon='mdi-library-add' class="waves-effect waves-light btn signUpBtn" iconPosition='right' text='Add Games To Your Collection'}}
         {{/link-to}}
         {{admin-edit updateProfile="updateProfile" user=model.whoAmI.user}}
-        {{admin-group-match users=model.users}}
+        {{admin-group-match users=model.users createGroups="createGroups"}}
       </div>
       <div class="col s8">
         <h4>Your collection</h4>

@@ -46,6 +46,10 @@ export default Ember.Route.extend({
         user.save();
       });
       this.transitionTo('admin');
+    },
+
+    createGroups(gamesMatched){
+      console.log(gamesMatched);
     }
   }
 });
