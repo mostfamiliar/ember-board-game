@@ -45,3 +45,5 @@ export default Ember.Component.extend({
     }
   }
 });
+
+// Distance calculation routine from https://www.geodatasource.com/developers/javascript, with gratitude
