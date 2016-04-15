@@ -17,7 +17,6 @@ export default Ember.Component.extend({
   	dist = Math.acos(dist);
   	dist = dist * 180/Math.PI;
   	dist = dist * 60 * 1.1515;
-    console.log(dist);
     if(dist >= 15){
       return false;
     } else {
@@ -27,21 +26,28 @@ export default Ember.Component.extend({
   actions: {
     matchByGame(users){
       var myGames = this.get('whoAmI').get('user').get('wantToPlay');
+      var myId = this.get('whoAmI').get('user').get('id');
       var gamesMatched = [];
       myGames.forEach(function(currentGame){
-        var currentGameTitle = currentGame.get('title');
+        var gameGroup = [];
         users.forEach(function(user){
-          var gameList = user.get('wantToPlay');
-          gameList.forEach(function(game){
-            var userGameTitle = game.get('title');
-            if (userGameTitle === currentGameTitle){
-                gamesMatched.push({currentGame: currentGameTitle, user: user.get('username')});
-                return gamesMatched;
-            }
-          });
+          if(user.get('id') !== myId){
+            var gameList = user.get('wantToPlay');
+            gameList.forEach(function(game){
+              if (game === currentGame){
+                gameGroup.push({currentGame: currentGame, user: user});
+                return gameGroup;
+              }
+            });
+          }
         });
-    });
-    console.log(gamesMatched);
+        if(gameGroup.length > 0){
+          gamesMatched.push(gameGroup);
+        }
+      });
+      this.sendAction('createGroups', gamesMatched);
     }
   }
 });
+
+// Distance calculation routine from https://www.geodatasource.com/developers/javascript, with gratitude
