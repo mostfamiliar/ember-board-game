@@ -14,11 +14,11 @@
   left: 50%;
   top: 400px;
   transform: translate(-50%, -50%);
-  background-color: rgba(251, 140, 0, .9);
+  background-color: rgba(251, 140, 0, .9) !important;
   color: #FAFAFA;
   font-size: 20px;
   &:hover {
-    background-color: #FFA726;
+    background-color: #FFA726 !important;
   }
 }
 
@@ -28,6 +28,14 @@
   color: #FAFAFA;
   font-size: 20px;
   margin-top: 12px;
+  &:hover {
+    background-color: #A5D6A7;
+  }
+}
+
+.btn {
+  background-color: rgba(139, 193, 117, .9);
+  color: #FAFAFA;
   &:hover {
     background-color: #A5D6A7;
   }
