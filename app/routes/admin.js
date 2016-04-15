@@ -49,7 +49,26 @@ export default Ember.Route.extend({
     },
 
     createGroups(gamesMatched){
-      console.log(gamesMatched);
+      var model = this.currentModel;
+      var user = model.whoAmI.get('user');
+      for(var i = 0; i < gamesMatched.length; i++){
+        var thisGroup = gamesMatched[i];
+        var groupGame = thisGroup[0].currentGame;
+        var params = {
+          title: groupGame.get('title'),
+          gameMatched: groupGame
+        };
+        var newGroup = this.store.createRecord('group', params);
+        newGroup.get('members').addObject(user);
+        for(var j = 0 ; j < thisGroup.length; j++){
+          var thisUser = thisGroup[j].user;
+          newGroup.get('members').addObject(thisUser);
+          console.log(newGroup);
+          newGroup.save().then(function(){
+            thisUser.save();
+          });
+        }
+      }
     }
   }
 });

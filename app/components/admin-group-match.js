@@ -29,20 +29,23 @@ export default Ember.Component.extend({
       var myId = this.get('whoAmI').get('user').get('id');
       var gamesMatched = [];
       myGames.forEach(function(currentGame){
-        //var currentGameTitle = currentGame.get('title');
+        var gameGroup = [];
         users.forEach(function(user){
           if(user.get('id') !== myId){
             var gameList = user.get('wantToPlay');
             gameList.forEach(function(game){
               if (game === currentGame){
-                gamesMatched.push({currentGame: currentGame, user: user});
-                return gamesMatched;
+                gameGroup.push({currentGame: currentGame, user: user});
+                return gameGroup;
               }
             });
           }
         });
-    });
-    this.sendAction('createGroups', gamesMatched);
+        if(gameGroup.length > 0){
+          gamesMatched.push(gameGroup);
+        }
+      });
+      this.sendAction('createGroups', gamesMatched);
     }
   }
 });
