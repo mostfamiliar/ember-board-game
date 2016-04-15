@@ -4,7 +4,7 @@
       <h1>Welcome, {{model.whoAmI.user.username}}</h1>
     </div>
     <div class="row">
-      <div id="admin-section" class="col s4">
+      <div id="admin-section" class="col s5">
         {{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
         {{#link-to 'profile' model.whoAmI.user.username}}
           {{md-btn icon='mdi-content-add' class="waves-effect waves-light btn signUpBtn" iconPosition='right' text='Add Games That You Own'}}
@@ -12,11 +12,13 @@
         {{admin-edit updateProfile="updateProfile" user=model.whoAmI.user}}
         {{admin-group-match users=model.users createGroups="createGroups"}}
       </div>
-      <div class="col s8">
+    </div>
+    <div class="row">
+      <div class="col s7">
         <h4>Your collection</h4>
         {{admin-collection-list}}
       </div>
-      <div class="col s4">
+      <div class="col s5">
         {{admin-group-display groups=model.whoAmI.user.groups deleteGroup="deleteGroup"}}
       </div>
     </div>
