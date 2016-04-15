@@ -1,2 +1,6 @@
-<h1>Groups</h1>
-<h4>Game: <a>[game name]</a></h4>
+<h4>Groups</h4>
+
+{{#each groups as |group|}}
+{{log group}}
+<h5>Game: {{#link-to 'group' group.id}}{{group.title}}{{/link-to}}</h5>
+{{/each}}
