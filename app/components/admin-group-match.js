@@ -14,7 +14,8 @@ export default Ember.Component.extend({
           gameList.forEach(function(game){
             var userGameTitle = game.get('title');
             if (userGameTitle === currentGameTitle){
-              gamesMatched.push(currentGameTitle);
+                gamesMatched.push({currentGame: currentGameTitle, user: user.get('username')});
+                return gamesMatched;
             }
           });
         });
