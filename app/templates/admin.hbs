@@ -7,7 +7,7 @@
       <div id="admin-section" class="col s4">
         {{admin-game-list games=model.databaseGames addToWantList="addToWantList"}}
         {{#link-to 'profile' model.whoAmI.user.username}}
-          {{md-btn btnIcon='mdi-library-add' class="waves-effect waves-light btn signUpBtn" iconPosition='right' text='Add Games To Your Collection'}}
+          {{md-btn icon='mdi-content-add' class="waves-effect waves-light btn signUpBtn" iconPosition='right' text='Add Games That You Own'}}
         {{/link-to}}
         {{admin-edit updateProfile="updateProfile" user=model.whoAmI.user}}
         {{admin-group-match users=model.users createGroups="createGroups"}}

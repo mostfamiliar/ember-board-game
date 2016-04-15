@@ -11,7 +11,7 @@
   <div class="col s6">
     <button type="button" class='btn' name="button" {{action 'showAll'}}>Show All Users on Map</button>
     {{#if (or showDistance showAll)}}
-      {{google-map allUsers=users user=findUser showDistance=showDistance showAll=showAll}}
+      {{google-map allUsers=group.members user=findUser showDistance=showDistance showAll=showAll}}
     {{/if}}
   </div>
 </div>
