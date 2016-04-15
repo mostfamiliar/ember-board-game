@@ -2,5 +2,5 @@
 
 {{#each groups as |group|}}
 {{log group}}
-<h5>Game: {{#link-to 'group' group.id}}{{group.title}}{{/link-to}}{{md-btn icon='mdi-action-delete' action='deleteGroup' actionArg=group buttonType='floating' class='btn'}}</h5>
+<h5>Game: {{#link-to 'group' group.id}}{{group.title}}{{/link-to}}{{md-btn icon='mdi-action-delete' action='deleteGroup' actionArg=group buttonType='floating' class='btn-delete'}}</h5>
 {{/each}}
