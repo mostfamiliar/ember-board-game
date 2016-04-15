@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('profile', {path:'/profile/:username'});
-  this.route('group');
+  this.route('group', {path: '/group/:group_id'});
   this.route('user', {path:'/user/:user_id'});
   this.route('admin');
   this.route('browse');
