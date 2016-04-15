@@ -5,7 +5,6 @@ export default Ember.Component.extend({
 
   actions: {
     addToCollection(){
-      // console.log(this.get('addGame'));
       this.sendAction("addToGameList", this.get('addGame'));
     }
   }
