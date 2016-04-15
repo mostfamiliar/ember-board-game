@@ -1,11 +1,13 @@
-<h3>Welcome, {{whoAmI.user.username}}</h3>
 <div class="row">
-  <h4>Your group: {{group.title}}</h4>
+  <h4>Group Game: {{group.title}}</h4>
   <div class="col s6">
+    <h5>Group Members:</h5>
     {{#each group.members as |user|}}
-    <h5>{{#link-to 'user' user.id}}{{user.username}}{{/link-to}}</h5>
-    {{!-- Add logic to prevent guest from getting map--}}
+    <div class="section">
+      <h5>{{#link-to 'user' user.id}}{{user.username}}{{/link-to}}</h5>
+      {{!-- Add logic to prevent guest from getting map--}}
       <button type="button" class='btn' name="button" {{action 'showDistance' user}}>Find distance from me</button>
+    </div>
     {{/each}}
   </div>
   <div class="col s6">
