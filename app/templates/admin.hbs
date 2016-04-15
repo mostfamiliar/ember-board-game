@@ -9,7 +9,7 @@
         {{#link-to 'profile' model.whoAmI.user.username}}
           {{md-btn btnIcon='mdi-library-add' class="waves-effect waves-light btn signUpBtn" iconPosition='right' text='Add Games To Your Collection'}}
         {{/link-to}}
-        {{admin-edit updateProfile="updateProfile"}}
+        {{admin-edit updateProfile="updateProfile" user=model.whoAmI.user}}
         {{admin-group-match users=model.users}}
       </div>
       <div class="col s8">
