@@ -63,9 +63,7 @@ export default Ember.Route.extend({
         user.save();
         for(var j = 0 ; j < thisGroup.length; j++){
           var thisUser = thisGroup[j].user;
-          console.log(thisUser.get('username'));
           newGroup.get('members').addObject(thisUser);
-          console.log(newGroup.get('members').get('length'));
           thisUser.save();
         }
         newGroup.save();
@@ -73,12 +71,17 @@ export default Ember.Route.extend({
     },
 
     deleteGroup(group){
-      var members = group.get('members'); //array of users
-      members.forEach(function(user){
-        user.get('groups').removeObject(group);
-        user.save();
+      var members = group.get('members');
+      var memberRemovals = members.map(function(member){
+        return member.get('groups').removeObject(group);
       });
-      group.destroyRecord();
+      Ember.RSVP.all(memberRemovals).then(function(){
+        members.forEach(function(user){
+          console.log(user.get('username'));
+          user.save();
+        });
+        return group.destroyRecord();
+      });
       this.transitionTo('admin');
     }
   }
