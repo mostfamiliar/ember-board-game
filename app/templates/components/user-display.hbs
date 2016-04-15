@@ -9,7 +9,6 @@
           </div>
           <div class="public-user-collection">
             <h4>{{user.firstName}}'s Collection:</h4>
-            {{log user.collection}}
             <ul class="collection">
               {{#each user.collection as |game|}}
               <li class="collection-item avatar">{{game-display-tile game=game}}</li>
@@ -29,7 +28,7 @@
       <div class="public-user-wishlist">
         <h4>{{user.firstName}}'s Play List:</h4>
         {{#each user.wantToPlay as |playList|}}
-        <h5><a href="http://boardgamegeek.com/boardgame/{{playList.gameId}}">{{playList.title}}</a></h5>
+        <h5><a href="http://boardgamegeek.com/boardgame/{{playList.gameId}}" target="_blank">{{playList.title}}</a></h5>
         {{/each}}
       </div>
     </div>
