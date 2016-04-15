@@ -1,5 +1,2 @@
-{{#each users as |user|}}
-{{user.username}}
-{{/each}}
-<button class="btn" {{action 'matchByGame' users}}>Find matches</button>
-{{log currentUser}}
+
+{{md-btn text="Find Matches" class="waves-effect waves-light btn signUpBtn" action='matchByGame' actionArg=localUsers}}
