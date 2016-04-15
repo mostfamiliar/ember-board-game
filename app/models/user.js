@@ -1,4 +1,6 @@
 import Model from 'ember-data/model';
+import Ember from 'ember';
+
 
 export default Model.extend({
   username: DS.attr(), //this must be identical to BGG username
