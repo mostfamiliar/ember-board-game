@@ -1,6 +1,6 @@
 {{#if addDbGames}}
   <h5>Choose which games you would like to play.</h5>
-  {{md-checks selection=addGame content=sortedGames optionLabelPath="title" optionValuePath="id"}}
+  <span class="checkList">{{md-checks selection=addGame content=sortedGames optionLabelPath="title" optionValuePath="id"}}</span>
 
   <button type="button" name="button" class='waves-effect waves-light btn signUpBtn' {{action 'addToWants'}}>Confirm</button>
 {{else}}
