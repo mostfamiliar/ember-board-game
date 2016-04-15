@@ -1,6 +1,6 @@
-<a name="signUp" class="waves-effect waves-light btn-large signUpBtn modal-trigger" {{action "openModal" 'signUpButton'}}>Sign Up</a>
+<button name="signUp" class="waves-effect waves-light btn-large signUpBtn modal-trigger" {{action "openModal" 'signUpButton'}}>Sign Up</button>
 
-<h6 class="sign-in-text">Already a member? Click <a {{action "openModal" 'logInButton'}}>here</a> to log in!</h6>
+<h6 class="sign-in-text">Already a member? Click <button {{action "openModal" 'logInButton'}}>here</button> to log in!</h6>
 
 {{#if modalIsOpen}}
   {{#md-modal close='closeModal' id="modal1"}}
